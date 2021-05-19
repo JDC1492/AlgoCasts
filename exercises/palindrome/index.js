@@ -7,13 +7,21 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+// function palindrome(str) {
+//   let origStr = str;
+//   let revString = str.split("").reverse().join("");
+//   if (origStr === revString) {
+//     return true;
+//   } else {
+//     false;
+//   }
+// }
+
 function palindrome(str) {
-  let origStr = str;
-  let revString = str.split("").reverse().join("");
-  if (origStr === revString) {
-    return true;
-  } else {
-    false;
+  let origStr = str.split("");
+  let revString = str.split("").reverse();
+  for (let letter of origStr) {
+    return revString.every((revLet, i) => revLet[i] === letter[i]);
   }
 }
 
